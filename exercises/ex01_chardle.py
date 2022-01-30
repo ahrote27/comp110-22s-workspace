@@ -1,10 +1,10 @@
-"""EX01 - Chardle - A cute step toward Wordle"""
+"""EX01 - Chardle - A cute step toward Wordle."""
 
 __author__ = "730460153"
 
 special_word: str = input("Enter a 5-character word: ")
 if len(special_word) != 5:
-    print("Word must contain 5 characters")
+    print("Error: Word must contain 5 characters")
     exit()
 
 single_character: str = input("Enter a single character: ")
@@ -13,7 +13,6 @@ if len(single_character) != 1:
     exit()
 
 count: int = (0)
-
 
 print("Searching for " + single_character + " in " + special_word)
 
@@ -41,7 +40,10 @@ if special_word[4] == single_character:
     count = (count + 1)
 
 if count == 0:
-    count = "No"
+    print("No instances of " + single_character + " found in " + special_word)
 
-print(str(count) + " instances of " + single_character + " found in " + special_word)
+if count == 1:
+    print(str(count) + " instance of " + single_character + " found in " + special_word)
 
+if count > 1:
+    print(str(count) + " instances of " + single_character + " found in " + special_word)
